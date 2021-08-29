@@ -1,9 +1,16 @@
 <?php
 session_start();
-require_once ('connexion.traitement.php');
-require_once ('calcul.traitement.php');
-require_once ('inscriptionEtablissement.traitement.php');
-require_once ('deconnexion.traitement.php');
+
+//require_once ('connexion.traitement.php');
+//require_once ('calcul.traitement.php');
+//require_once ('inscriptionEtablissement.traitement.php');
+
+// Script de déconnexion de la session de l'établissement authentifié
+if (isset($_POST["deconnecter"])) {
+    session_destroy();
+    header('location:index.php');
+    exit();
+}
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>

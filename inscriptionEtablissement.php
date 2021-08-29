@@ -1,10 +1,34 @@
 <?php
 require_once ("_entete.inc.php");
+// Algorithme qui inaugure un nouvel établissment dans la base de données calcul
+$cnx = pg_connect("host=localhost dbname=calcul user=root password=root options=--client_encoding=UTF8") or die("Pas de connexion à la base de données");
+if (isset($_POST["valider"])) {
+   if (isset($_POST["codeuai"], $_POST["nom"], $_POST["adresse"], $_POST["cp"], $_POST["ville"], $_POST["tel"], $_POST["email"], $_POST["motpasse"])) {
+	   $codeuai = $_POST["codeuai"];
+	   $nom = $_POST["nom"];
+	   $adresse = $_POST["adresse"];
+	   $cp = $_POST["cp"];
+	   $ville = $_POST["ville"];
+	   $tel = $_POST["tel"];
+	   $email = $_POST["email"];
+	   $motpasse = $_POST["motpasse"];
+       $req = "INSERT INTO etablissement (code_uai, nom, adresse, codepostal, ville, telephone, email, motpasse)
+    VALUES ('$codeuai', '$nom', '$adresse', '$cp', '$ville', '$tel', '$email', '$motpasse')";
+        pg_query($cnx, $req);
+        echo "<div class=\"alert alert-success\" role=\"alert\">
+            Votre établissement a été enregistré avec succès !
+        </div>";
+    } else {
+        echo "<div class=\"alert alert-warning\" role=\"alert\">
+            Votre établissement n'a pas été enregistré sans succès !
+        </div>";
+    }
+}
 ?>
 <body>
 	<section class="jumbotron container">
 		<h1>Veuillez vous identifiez</h1>
-		<form action="bienvenue.php" class="form-group col-md-8" method="POST"
+		<form action="<?php echo $_SERVER["PHP_SELF"];?>" class="form-group col-md-8" method="POST"
 			enctype="application/x-www-form-urlencoded">
 			<input type="text" id="codeuai" class="form-control" name="codeuai"
 				autocomplete="off" placeholder="Entrez votre code UAI"> <br> <input
@@ -30,6 +54,4 @@ require_once ("_entete.inc.php");
 		</form>
 	</section>
 	<!-- /container -->
-</body>
-<?php require_once ('_piedpage.inc.php'); ?>
-</html>
+<?php pg_close($cnx); require_once ('_piedpage.inc.php'); ?>
