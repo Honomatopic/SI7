@@ -11,7 +11,7 @@ require_once ('_entetemenu.inc.php');
 		<form action="<?php $_SERVER['PHP_SELF']; ?>" method="post"
 			enctype="application/x-www-form-urlencoded"
 			class="form-group col-md-8">
-			<select name="nombre1">
+			<select name="premierchiffre">
 				<option value="0">0</option>
 				<option value="1">1</option>
 				<option value="2">2</option>
@@ -25,7 +25,7 @@ require_once ('_entetemenu.inc.php');
 			</select> <select name="choix">
 				<option value="addition">+</option>
 				<option value="soustraction">-</option>
-			</select> <select name="nombre2">
+			</select> <select name="deuxiemechiffre">
 				<option value="0">0</option>
 				<option value="1">1</option>
 				<option value="2">2</option>
@@ -60,7 +60,9 @@ function soustraction($premierchiffre, $deuxiemechiffre)
 // Algorithme qui calcul le résultat de l'addition s'il est supérieur ou inférieur à 10
 if (isset($_POST["egal"]) && $_POST["choix"] == "addition") {
     $resultatcalcul = $_POST["egal"];
-    $egal = addition($_POST["nombre1"], $_POST["nombre2"]);
+	$premierchiffre = $_POST["premierchiffre"];
+	$deuxiemechiffre = $_POST["deuxiemechiffre"];
+    $egal = addition($premierchiffre, $deuxiemechiffre);
     if ($egal <= 9) {
         echo "<div class=\"alert alert-success\" role=\"alert\">
             Bravo ton addition est égale à $egal. Et il est en dessous à 10 !
@@ -73,7 +75,9 @@ if (isset($_POST["egal"]) && $_POST["choix"] == "addition") {
     // Et si c'est une soustraction, on détermine si le résultat est supérieur ou inférieur à 0
 } elseif (isset($_POST["egal"]) && $_POST["choix"] == "soustraction") {
     $resultatcalcul = $_POST["egal"];
-    $egal = soustraction($_POST["nombre1"], $_POST["nombre2"]);
+	$premierchiffre = $_POST["premierchiffre"];
+	$deuxiemechiffre = $_POST["deuxiemechiffre"];
+    $egal = soustraction($premierchiffre, $deuxiemechiffre);
     if ($egal >= 0) {
         echo "<div class=\"alert alert-success\" role=\"alert\">
             Bravo ta soustraction est $egal. Et il est au dessus ou égal à 0 !
