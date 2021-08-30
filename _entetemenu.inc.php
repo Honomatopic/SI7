@@ -5,7 +5,7 @@
 			<a class="navbar-brand"></a>
 		</div>
 		<div id="navbar" class="collapse navbar-collapse">
-            <?php if (isset($_SESSION["email"])): ?>
+            <?php if (isset($_SESSION["email"])){ ?>
                 <div class="nav navbar-nav pull-right">
 				<form action="<?php echo $_SERVER['PHP_SELF']; ?>"
 					class="navbar-form navbar-right" method="POST"
@@ -20,7 +20,7 @@
 									title="log-out">Se déconnecter</button></span></a>
 				</form>
 			</div>
-            <?php endif; ?>
+            <?php }; ?>
         </div>
 		<!-- /.nav-collapse -->
 	</div>
