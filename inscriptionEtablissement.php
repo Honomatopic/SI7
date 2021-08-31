@@ -1,5 +1,5 @@
 <?php
-require_once ("_entete.inc.php");
+require_once("_entete.inc.php");
 // Algorithme qui inaugure un nouvel établissment dans la base de données calcul
 $cnx = pg_connect("host=localhost dbname=calcul user=root password=root options=--client_encoding=UTF8") or die("Pas de connexion à la base de données");
 if (isset($_POST["valider"])) {
@@ -53,5 +53,5 @@ if (isset($_POST["valider"])) {
 	</section>
 <?php 
 pg_close($cnx); 
-require_once ('_piedpage.inc.php'); 
+require_once('_piedpage.inc.php'); 
 ?>

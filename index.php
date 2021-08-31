@@ -1,5 +1,5 @@
 <?php
-require_once ("_entete.inc.php");
+require_once("_entete.inc.php");
 $cnx = pg_connect("host=localhost dbname=calcul user=root password=root options=--client_encoding=UTF8") or die("Pas de connexion à la base de données");
 // Algorithme permettant la connexion de l'établissement
 if (isset($_POST["envoyer"], $_POST["email"], $_POST["motpasse"])) {

@@ -1,10 +1,6 @@
 <?php
 session_start();
 
-//require_once ('connexion.traitement.php');
-//require_once ('calcul.traitement.php');
-//require_once ('inscriptionEtablissement.traitement.php');
-
 // Script de déconnexion de la session de l'établissement authentifié
 if (isset($_POST["deconnecter"])) {
     session_destroy();
@@ -27,7 +23,7 @@ if (isset($_POST["deconnecter"])) {
 <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
 <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
 <!--script src="../../assets/js/ie-emulation-modes-warning.js"></script-->
-<title>Calculnette</title>
+<title>C'est Calculnette</title>
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!--[if lt IE 9]>
           <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>

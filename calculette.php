@@ -1,10 +1,8 @@
 <?php
-require_once ('_entetemenu.inc.php');
+require_once('_entetemenu.inc.php');
 
 ?>
 <div class="jumbotron container">
-	<title>C'est Calculnette</title>
-	</head>
 	<body>
 		<img src="images/mrsgeek.jpg" />
 		<h1>Salut c'est ton ami Calculnette</h1>
@@ -64,13 +62,9 @@ if (isset($_POST["egal"]) && $_POST["choix"] == "addition") {
 	$deuxiemechiffre = $_POST["deuxiemechiffre"];
     $egal = addition($premierchiffre, $deuxiemechiffre);
     if ($egal <= 9) {
-        echo "<div class=\"alert alert-success\" role=\"alert\">
-            Bravo ton addition est égale à $egal. Et il est en dessous à 10 !
-        </div>";
+        echo "<div class=\"alert alert-success\" role=\"alert\">Bravo ton addition est égale à $egal. Et il est en dessous à 10 !</div>";
     } else {
-        echo "<div class=\"alert alert-danger\" role=\"alert\">
-            Désolé mais ton addition est supérieur ou égale à 10 car ton chiffre est $egal !
-        </div>";
+        echo "<div class=\"alert alert-danger\" role=\"alert\">Désolé mais ton addition est supérieur ou égale à 10 car ton chiffre est $egal !</div>";
     }
     // Et si c'est une soustraction, on détermine si le résultat est supérieur ou inférieur à 0
 } elseif (isset($_POST["egal"]) && $_POST["choix"] == "soustraction") {
@@ -79,19 +73,13 @@ if (isset($_POST["egal"]) && $_POST["choix"] == "addition") {
 	$deuxiemechiffre = $_POST["deuxiemechiffre"];
     $egal = soustraction($premierchiffre, $deuxiemechiffre);
     if ($egal >= 0) {
-        echo "<div class=\"alert alert-success\" role=\"alert\">
-            Bravo ta soustraction est $egal. Et il est au dessus ou égal à 0 !
-        </div>";
+        echo "<div class=\"alert alert-success\" role=\"alert\">Bravo ta soustraction est $egal. Et il est au dessus ou égal à 0 !</div>";
     } else {
-        echo "<div class=\"alert alert-danger\" role=\"alert\">
-            Désolé mais ta soustraction est inférieure à 0 car ton chiffre est $egal !
-        </div>";
+        echo "<div class=\"alert alert-danger\" role=\"alert\">Désolé mais ta soustraction est inférieure à 0 car ton chiffre est $egal !</div>";
     }
 }
-
         ?>
 </body>
 <?php 
-require_once ('_piedpage.inc.php'); 
+require_once('_piedpage.inc.php'); 
 ?>
-</html>
