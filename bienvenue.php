@@ -9,5 +9,6 @@ require_once ('_entetemenu.inc.php');
 		<br>
 		<a href="calculette.php"><img src="images/mangerbouger.jpg" /> </a>
 </div>
-</body>
-</html>
+<?php
+require_once ('_piedpage.inc.php');
+?>
