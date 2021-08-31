@@ -3,7 +3,6 @@ require_once('_entetemenu.inc.php');
 
 ?>
 <div class="jumbotron container">
-	<body>
 		<img src="images/mrsgeek.jpg" />
 		<h1>Salut c'est ton ami Calculnette</h1>
 		<form action="<?php $_SERVER['PHP_SELF']; ?>" method="post" enctype="application/x-www-form-urlencoded" class="form-group col-md-8">
@@ -40,8 +39,7 @@ require_once('_entetemenu.inc.php');
 		</form>
 		<br>
 		<br>
-		<a href="http://www.mangerbouger.fr/pour-qui-242/enfants/"><img
-			src="images/mangerbouger.jpg" /> </a>
+		<a href="http://www.mangerbouger.fr/pour-qui-242/enfants/"><img src="images/mangerbouger.jpg" /> </a>
         <?php
        // Fonction qui additionne
 function addition($premierchiffre, $deuxiemechiffre)
@@ -79,7 +77,6 @@ if (isset($_POST["egal"]) && $_POST["choix"] == "addition") {
     }
 }
         ?>
-</body>
 <?php 
 require_once('_piedpage.inc.php'); 
 ?>

@@ -8,8 +8,7 @@ if (isset($_POST["deconnecter"])) {
     exit();
 }
 ?>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE html>
 <head>
 
 <!-- Bootstrap core CSS -->
@@ -31,4 +30,3 @@ if (isset($_POST["deconnecter"])) {
         <![endif]-->
 </head>
 <body>
-</body>
