@@ -4,7 +4,7 @@
 			<a class="navbar-brand"></a>
 		</div>
 		<div id="navbar" class="collapse navbar-collapse">
-            <?php if (isset($_SESSION["email"])){ ?>
+<?php if (isset($_SESSION["email"])){ ?>
                 <div class="nav navbar-nav pull-right">
 				<form action="<?php echo $_SERVER['PHP_SELF']; ?>" class="navbar-form navbar-right" method="POST" enctype="application/x-www-form-urlencoded">
 					<span class="glyphicon glyphicon-user white xsTabulation" aria-hidden="true"> </span> 
