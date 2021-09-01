@@ -1,5 +1,5 @@
 <?php
-require_once("_entete.inc.php");
+require_once("_entetemenu.inc.php");
 $cnx = pg_connect("host=localhost dbname=calcul user=root password=root options=--client_encoding=UTF8") or die("Pas de connexion à la base de données");
 // Algorithme permettant la connexion de l'établissement
 if (isset($_POST["envoyer"], $_POST["email"], $_POST["motpasse"])) {
@@ -21,21 +21,17 @@ if (isset($_POST["envoyer"], $_POST["email"], $_POST["motpasse"])) {
     }
 }
 ?>
-<body>
-	<div class="jumbotron container center-block">
 		<h1>Veuillez vous identifiez</h1>
-		<form action="<?php echo $_SERVER["PHP_SELF"];?>" class="form-group col-md-8" method="POST" enctype="application/x-www-form-urlencoded">
+		<form action="<?php echo $_SERVER["PHP_SELF"];?>" method="POST" enctype="application/x-www-form-urlencoded">
 			<input type="email" class="form-control" name="email" placeholder="Entrez votre email"> 
 			<br> 
 			<input type="password" class="form-control" name="motpasse" placeholder="Entrez votre mot de passe"> 
 			<br>
 			<button type="submit" class="btn btn-primary" name="envoyer">Envoyer</button>
-			<br> <br>
+			<br>
+			<br>
 		</form>
-	</div>
 	<a href="inscriptionEtablissement.php"><input type="submit" name="envoyer" class="btn btn-info btn-lg" value="S'inscrire"></a>
-	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-	<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
 <?php 
 pg_close($cnx); 
 require_once("_piedpage.inc.php");

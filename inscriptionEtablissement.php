@@ -1,5 +1,5 @@
 <?php
-require_once("_entete.inc.php");
+require_once("_entetemenu.inc.php");
 // Algorithme qui inaugure un nouvel établissment dans la base de données calcul
 $cnx = pg_connect("host=localhost dbname=calcul user=root password=root options=--client_encoding=UTF8") or die("Pas de connexion à la base de données");
 if (isset($_POST["valider"])) {
@@ -24,10 +24,8 @@ if (isset($_POST["valider"])) {
     }
 }
 ?>
-<body>
-	<section class="jumbotron container">
 		<h1>Veuillez vous identifiez</h1>
-		<form action="<?php echo $_SERVER["PHP_SELF"];?>" class="form-group col-md-8" method="POST" enctype="application/x-www-form-urlencoded">
+		<form action="<?php echo $_SERVER["PHP_SELF"];?>" method="POST" enctype="application/x-www-form-urlencoded">
 			<input type="text" id="codeuai" class="form-control" name="codeuai" autocomplete="off" placeholder="Entrez votre code UAI"> 
 			<br> 
 			<input type="text" class="form-control" name="nom" placeholder="Entrez votre nom de l'établissement"> 
@@ -50,7 +48,6 @@ if (isset($_POST["valider"])) {
 			<br>
 			<input type="submit" class="btn btn-primary" name="valider" value="Valider">
 		</form>
-	</section>
 <?php 
 pg_close($cnx); 
 require_once('_piedpage.inc.php'); 

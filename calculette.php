@@ -2,7 +2,7 @@
 require_once('_entetemenu.inc.php');
 
 ?>
-<div class="jumbotron container">
+
 		<img src="images/mrsgeek.jpg" />
 		<h1>Salut c'est ton ami Calculnette</h1>
 		<form action="<?php $_SERVER['PHP_SELF']; ?>" method="post" enctype="application/x-www-form-urlencoded" class="form-group col-md-8">
