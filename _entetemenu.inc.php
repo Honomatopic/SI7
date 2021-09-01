@@ -16,6 +16,5 @@
 			}; 
 			?>
         </div>
-
 </nav>
 	<section class="jumbotron container">
