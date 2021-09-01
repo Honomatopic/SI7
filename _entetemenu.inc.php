@@ -12,9 +12,7 @@
 						<input type="submit" name="deconnecter" class="btn btn-success" aria-hidden="true" title="log-out" value="Se déconnecter"></a>
 				</form>
 			</div>
-            <?php 
-			}; 
-			?>
+<?php }; ?>
         </div>
 </nav>
 	<section class="jumbotron container">
