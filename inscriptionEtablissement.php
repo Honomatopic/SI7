@@ -14,13 +14,9 @@ if (isset($_POST["valider"])) {
 	   $motpasse = $_POST["motpasse"];
        $req = "INSERT INTO etablissement (code_uai, nom, adresse, codepostal, ville, telephone, email, motpasse) VALUES ('$codeuai', '$nom', '$adresse', '$cp', '$ville', '$tel', '$email', '$motpasse')";
         pg_query($cnx, $req);
-        echo "<div class=\"alert alert-success\" role=\"alert\">
-            Votre établissement a été enregistré avec succès !
-        </div>";
+        echo "<div class=\"alert alert-success\" role=\"alert\">Votre établissement a été enregistré avec succès !</div>";
     } else {
-        echo "<div class=\"alert alert-warning\" role=\"alert\">
-            Votre établissement n'a pas été enregistré sans succès !
-        </div>";
+        echo "<div class=\"alert alert-warning\" role=\"alert\">Votre établissement n'a pas été enregistré sans succès !</div>";
     }
 }
 ?>

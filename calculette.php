@@ -1,9 +1,9 @@
 <?php
 require_once('_entetemenu.inc.php');
 ?>
-		<img src="images/mrsgeek.jpg" />
-		<h1>Salut c'est ton ami Calculnette</h1>
-		<form action="<?php $_SERVER['PHP_SELF']; ?>" method="post" enctype="application/x-www-form-urlencoded" class="form-group col-md-8">
+<img src="images/mrsgeek.jpg" />
+<h1>Salut c'est ton ami Calculnette</h1>
+<form action="<?php $_SERVER['PHP_SELF']; ?>" method="post" class="form-group col-md-8">
 			<select name="premierchiffre">
 				<option value="0">0</option>
 				<option value="1">1</option>
